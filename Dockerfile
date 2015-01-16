@@ -16,9 +16,9 @@ RUN mv apr-1.5.1 httpd-2.4.10/srclib/apr
 RUN mv apr-util-1.5.4 httpd-2.4.10/srclib/apr-util
 
 RUN wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.36.tar.gz
-RUN tar zxvf pcre-8.34.tar.gz
+RUN tar zxvf pcre-8.36.tar.gz
 
-RUN cd pcre-8.34 &&  ./configure --prefix=/usr/local/pcre && make && make install
+RUN cd pcre-8.36 &&  ./configure --prefix=/usr/local/pcre && make && make install
 
 RUN cd httpd-2.4.10 && ./configure --prefix=/opt/apache24 --enable-mods-shared=all --enable-so --with-included-apr --with-pcre=/usr/local/pcre && make && make install
 
